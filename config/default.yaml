@@ -1,0 +1,6 @@
+bower:
+    packages:
+        url: "https://bower.herokuapp.com/packages"
+
+server:
+    port: 4002
