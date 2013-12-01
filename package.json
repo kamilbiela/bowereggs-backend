@@ -1,0 +1,40 @@
+{
+  "name": "bowereggs-backend",
+  "version": "0.0.0",
+  "description": "bowereggs-backend =================",
+  "main": "index.js",
+  "dependencies": {
+    "config": "~0.4.33",
+    "mongoose": "~3.8.3",
+    "restify": "~2.6.0",
+    "yaml": "~0.2.3",
+    "when": "~2.6.0",
+    "requestify": "~0.1.16",
+    "progress": "~1.1.2",
+    "sinon": "~1.7.3",
+    "rewire": "~2.0.0",
+    "lodash": "~2.4.1",
+    "octonode": "~0.4.0",
+    "base64": "~2.1.0",
+    "nock": "~0.23.0",
+    "mocha": "~1.14.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0",
+    "should": "~2.1.0",
+    "nock": "~0.23.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kamilbiela/bowereggs-backend.git"
+  },
+  "author": "Kamil Biela",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/kamilbiela/bowereggs-backend/issues"
+  },
+  "homepage": "https://github.com/kamilbiela/bowereggs-backend"
+}

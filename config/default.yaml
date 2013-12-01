@@ -1,0 +1,14 @@
+bower:
+    packages:
+        url: "https://bower.herokuapp.com/packages"
+
+db:
+    name: bowereggs
+
+server:
+    port: 4002
+
+github:
+    client:
+        id: null
+        secret: null
