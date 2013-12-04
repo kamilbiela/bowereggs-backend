@@ -1,16 +1,28 @@
 var config = require('config');
 var restify = require('restify');
 var when = require('when'); 
+var mongoose = require('mongoose');
 
 module.exports = function() {
-    var deferred = when.defer();
-    var server = restify.createServer();
+    return when.promise(function(resolve, reject){
+        var server = restify.createServer();
 
-    require('./routes/egg')(server);
+        // routes
+        require('./routes/egg')(server);
 
-    server.listen(config.server.port, function() {
-        deferred.resolve(server);
+        // mongo
+        mongoose.connect('mongodb://localhost/' + config.db.name);
+
+        var db = mongoose.connection;
+        db.on('error', function(error) {
+            reject(error);
+            throw error;
+        });
+
+        db.once('open', function callback () {
+            server.listen(config.server.port, function() {
+                resolve(server);
+            });
+        });
     });
-
-    return deferred.promise;
 };

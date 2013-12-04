@@ -1,6 +1,6 @@
 var app = require('../restServer')
 var assert = require('assert');
-var Nest = require('../lib/nest/Nest');
+var nest = require('../lib/nest/nest');
 var nock = require('nock');
 
 nock.disableNetConnect();
@@ -12,7 +12,7 @@ describe('lib.nest.nest.js', function(){
         });
     });
 
-    describe('#fetchData()', function(){
+    describe('#fetchEggs()', function(){
         it('should fetch remote server and return promise that resolve to json', function(done) {
 
             nock('https://bower.herokuapp.com')
@@ -21,7 +21,7 @@ describe('lib.nest.nest.js', function(){
                     [{name: "test name 1"}, {name: '123'}]
                 ));
 
-            (new Nest()).fetchData().then(function(json) {
+            nest.fetchEggs().then(function(json) {
                 assert.strictEqual(json.length, 2);
                 assert.strictEqual(json[0].name, "test name 1");
                 done();
