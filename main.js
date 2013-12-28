@@ -7,6 +7,7 @@ var github = require('octonode');
 app().done(function (server) {
     console.log('%s listening at %s', server.name, server.url);
 
+    /*
     // update eggs
     function updateEggs() {
         console.log('===> updating data');
@@ -23,11 +24,13 @@ app().done(function (server) {
             }
 
             var g = new githubUpdater(ghClient);
-            g.warmEggs();
+            g.warmEggs().done(function() {
+                setTimeout(updateEggs, 24 * 60 * 60 * 1000);
+            }, console.error);
         }, console.error);
     }
-// settimeout wewnatrz updateeggs
-    setInterval(updateEggs, 24 * 60 * 60 * 1000);
+
     updateEggs();
+*/
 
 }, console.error);
