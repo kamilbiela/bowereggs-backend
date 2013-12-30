@@ -7,7 +7,6 @@ var github = require('octonode');
 app().done(function (server) {
     console.log('%s listening at %s', server.name, server.url);
 
-    /*
     // update eggs
     function updateEggs() {
         console.log('===> updating data');
@@ -31,6 +30,5 @@ app().done(function (server) {
     }
 
     updateEggs();
-*/
 
 }, console.error);

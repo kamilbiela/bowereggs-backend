@@ -14,7 +14,10 @@ var eggSchema = new Schema({
     updatedAt: Date,
     forksCount: Number,
     stargazersCount: Number,
-    masterBranch: String
+    masterBranch: String,
+    owner: {
+        avatarUrl: String
+    }
 });
 
 eggSchema.virtual('githubName').get(function() {
