@@ -9,14 +9,14 @@ var eggSchema = new Schema({
     htmlUrl: String,
     keywords: [String],
     description: String,
-    owner: String,
     createdAt: Date,
     updatedAt: Date,
     forksCount: Number,
     stargazersCount: Number,
     masterBranch: String,
     owner: {
-        avatarUrl: String
+        avatarUrl: String,
+        login: String
     }
 });
 
