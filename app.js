@@ -9,6 +9,8 @@ module.exports = function() {
     return when.promise(function(resolve, reject) {
         var server = restify.createServer();
         server.use(restify.queryParser());
+        server.use(restify.gzipResponse());
+
         // routes
         require('./routes/eggRoute')(server, Egg);
 
